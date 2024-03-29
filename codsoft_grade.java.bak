@@ -1,0 +1,60 @@
+import java.util.*;
+class codsoft_grade 
+{
+	public static void main(String[] args) 
+	{
+		int p,c,m,e,h,t;
+		double ptg;
+		Scanner s1=new Scanner(System.in);
+		System.out.println("Enter marks out off 100");
+		System.out.println("Enter marks of Maths");
+		m=s1.nextInt();
+		System.out.println("Enter marks of Physics");
+		p=s1.nextInt();
+		System.out.println("Enter marks of Chemistry");
+		c=s1.nextInt();
+		System.out.println("Enter marks of Hindi");
+		h=s1.nextInt();
+		System.out.println("Enter marks of English");
+		e=s1.nextInt();
+		t=p+c+m+e+h;
+		System.out.println("Total of all the subject="+t);
+		ptg=t/5;	
+		System.out.println("Total Marks:"+t+"Average percentage:"+ptg);
+		if(ptg>=85)
+		{
+			System.out.println("Grade= A++");
+		}
+		else if(ptg>=75)
+		{
+			System.out.println("Grade= A+");
+		}
+		else if(ptg>=70)
+		{
+			System.out.println("Grade= A");
+		}
+		else if(ptg>=65)
+		{
+			System.out.println("Grade= B+");
+		}
+		else if(ptg>=60)
+		{
+			System.out.println("Grade= B");
+		}
+		else if(ptg>=55)
+		{
+			System.out.println("Grade= C");
+		}
+		else if(ptg>=50)
+		{
+			System.out.println("Grade= D");
+		}
+		else if(ptg<50)
+		{
+			System.out.println("FAIL");
+		}
+
+		
+
+	}
+}
