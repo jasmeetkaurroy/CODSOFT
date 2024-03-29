@@ -1,0 +1,79 @@
+import java.util.*;
+class AtmA
+{
+	int b,dm,wm,pin,acc;
+	Scanner s1=new Scanner(System.in);
+	String name;
+	public void checkBal(int bal)
+	{
+      b=bal;
+      System.out.println("Your current balance is "+bal);
+	}
+	public void depo(int d)
+	{
+	  dm=d;
+      System.out.println("Enter amount you want to deposit\n");
+	  dm=s1.nextInt();
+	  b=b+dm;
+	  checkBal(b);
+	}
+	public void with(int w)
+	{
+	  wm=w;
+      System.out.println("Enter amount you want to withdraw\n");
+	  wm=s1.nextInt();
+	  if(b>=wm)
+		{
+		  b=b-wm;
+		  checkBal(b);
+		}
+		else
+		{
+			System.out.println("Insufficient balance");
+			checkBal(b);
+		}
+	}
+	
+}
+class  Atm
+{
+	public static void main(String[] args) 
+	{
+		int bal=5000,pin=4512,k=0,i,a=1;
+		int d=0,w=0;
+		AtmA a1=new AtmA();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Welcome customer!\nPlease enter your valid 4 digit pin");
+		k=sc.nextInt();
+		
+		
+		
+		if(k==pin)
+		{
+			while(a!=0)
+			{
+				System.out.println("PLease select your operation\n1.Checking balance\t2.Deposit money\n3.Withdraw money");
+				i=sc.nextInt();
+				switch(i)
+				{
+					case 1:a1.checkBal(bal);
+					//a1.checkBal(bal);
+                        break;
+					case 2:a1.depo(d);
+					//a1.depo(d);
+						break;
+					case 3:a1.with(w);
+					//a1.with(w);
+						break;
+					default:System.out.println("You entered wrong choice");
+				}
+				System.out.println("Do you want to continue?\nPress 1 for continue otherwise press 0");
+				a=sc.nextInt();
+			}
+		}
+		else
+		{
+			System.out.println("You entered wrong pin");
+		}
+     }
+}
